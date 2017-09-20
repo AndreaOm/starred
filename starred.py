@@ -62,7 +62,7 @@ def starred(username, token, sort, repository, message):
 
     gh = GitHub(token=token)
     stars = gh.starred_by(username)
-    click.echo(desc)
+    click.echo(desc.format(username=username,repository=repository))
     repo_dict = {}
 
     for s in stars:
